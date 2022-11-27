@@ -6,8 +6,8 @@ import { groq } from "next-sanity";
 
 const query = groq`*[_type == "post"]{
     _id,
-    _createdAt,
     title,
+    _createdAt,
     author-> {
       name,
       image

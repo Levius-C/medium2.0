@@ -2,7 +2,7 @@ import Link from "next/link"
 
 function Header() {
   return (
-    <header className="flex justify-between p-5 max-w-7xl mx-auto text-sm">
+    <header className="flex justify-between p-5 max-w-7xl mx-auto text-sm sticky top-0 bg-white shadow-sm shadow-slate-400">
       <div className="flex items-center space-x-5">
         <Link href="/">
           <img className="object-contain cursor-pointer w-44" src="https://links.papareact.com/yvf" alt="LOGO" />
