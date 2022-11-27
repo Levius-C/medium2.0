@@ -44,14 +44,17 @@ const Home: NextPage<Props> = ({ posts }: Props) => {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-6 p-2 md:p-6">
         {posts?.map(post =>
           <Link key={post._id} href={`/post/${post.slug.current}`}>
-            <div className="flex justify-between group border rounded-lg ">
+            <div className="flex-row sm:flex justify-between group border rounded-lg ">
               <div className="p-5 space-y-4">
                 <div className="flex items-center space-x-3 ">
                   <img className="h-6 w-6 rounded-full" src={urlFor(post.author.image).url()} alt="" />
                   <p>{post.author.name}</p>
                 </div>
                 <h1 className="text-xl md:text-2xl font-bold ">{post.title}</h1>
-                <h3 className="">created at <br />{post._createdAt.slice(0, 10)}</h3>
+                <div className="inline-flex sm:flex-col">
+                  <h3>created at &nbsp;</h3>
+                  <h3>{post._createdAt.slice(0, 10)}</h3>
+                </div>
               </div>
               <div>
                 <img className="w-60 h-full object-cover p-5 group-hover:scale-105 transition-transform duration-200 ease-in-out" src={urlFor(post.mainImage).url()} alt="" />
